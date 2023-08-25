@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 class List(models.Model):
     name = models.CharField(max_length=250)
-    color = models.CharField(max_length=30)
 
     class Meta:
         verbose_name_plural = 'Lists'
@@ -17,8 +16,8 @@ class Task(models.Model):
     name = models.CharField(max_length=250)
     body = models.TextField()
     list = models.ForeignKey(List, related_name='tasks', on_delete=models.CASCADE)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateField()
+    end_time = models.DateField()
     is_complete = models.BooleanField(default=False)
     author = models.ForeignKey(User, related_name='author', on_delete=models.CASCADE)
 

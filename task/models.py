@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class List(models.Model):
     name = models.CharField(max_length=250)
+    color = models.CharField(max_length=30)
 
     class Meta:
         verbose_name_plural = 'Lists'

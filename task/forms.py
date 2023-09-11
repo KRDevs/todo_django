@@ -9,21 +9,11 @@ class NewTask(forms.ModelForm):
         model = Task
         fields = ('name', 'list', 'body', 'start_time', 'end_time')
         widgets = {
-            'list': forms.Select(attrs={
-                'class': INPUT_CLASSES
-            }),
-            'name': forms.TextInput(attrs={
-                'class': INPUT_CLASSES
-            }),
-            'body': forms.Textarea(attrs={
-                'class': INPUT_CLASSES
-            }),
-            'start_time': forms.DateInput(attrs={
-                'class': INPUT_CLASSES
-            }),
-            'end_time': forms.DateInput(attrs={
-                'class': INPUT_CLASSES
-            }),
+            'list': forms.Select(attrs={'class': INPUT_CLASSES}),
+            'name': forms.TextInput(attrs={'class': INPUT_CLASSES}),
+            'body': forms.Textarea(attrs={'class': INPUT_CLASSES}),
+            'start_time': forms.DateTimeInput(attrs={'class': INPUT_CLASSES}),
+            'end_time': forms.DateTimeInput(attrs={'class': INPUT_CLASSES}),
         }
 
 
@@ -41,10 +31,6 @@ class EditTask(forms.ModelForm):
             'body': forms.Textarea(attrs={
                 'class': INPUT_CLASSES
             }),
-            'start_time': forms.DateInput(attrs={
-                'class': INPUT_CLASSES
-            }),
-            'end_time': forms.DateInput(attrs={
-                'class': INPUT_CLASSES
-            }),
+            'start_time': forms.DateTimeInput(attrs={'class': INPUT_CLASSES}),
+            'end_time': forms.DateTimeInput(attrs={'class': INPUT_CLASSES}),
         }

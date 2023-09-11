@@ -5,6 +5,7 @@ from .forms import SignupForm
 def index(request):
     return render(request, 'core/index.html')
 
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
